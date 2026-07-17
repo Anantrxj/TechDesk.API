@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TechDesk.API.DTOs.Department;
 using TechDesk.API.Services.Interfaces;
 
@@ -32,6 +33,7 @@ namespace TechDesk.API.Controllers
             return Ok(department);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CreateDepartmentDto dto)
         {
             var department = await _departmentService.CreateAsync(dto);

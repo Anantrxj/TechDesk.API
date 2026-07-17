@@ -41,9 +41,17 @@ namespace TechDesk.API.Services
             };
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var department = await _context.Departments.FindAsync(id);
+
+            if (department == null)
+                return false;
+
+            _context.Departments.Remove(department);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
 
         

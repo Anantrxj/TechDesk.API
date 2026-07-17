@@ -1,8 +1,8 @@
 ﻿using TechDesk.API.Enums;
 
-namespace TechDesk.API.Models
+namespace TechDesk.API.DTOs.Category
 {
-    public class Category
+    public class CategoryResponseDto
     {
         public int Id { get; set; }
 
@@ -11,6 +11,5 @@ namespace TechDesk.API.Models
         public string? Description { get; set; }
 
         public Priority DefaultPriority { get; set; }
-        public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }
