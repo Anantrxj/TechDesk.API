@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechDesk.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c2bef06ed9678feaa78e2c4ca761a3e99b62fae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b064f95214b1583eaf15d9f782acf8321875d5d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechDesk.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechDesk.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

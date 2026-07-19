@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TechDesk.API.Data;
 using TechDesk.API.DTOs.Ticket;
 using TechDesk.API.Enums;
@@ -48,6 +48,7 @@ namespace TechDesk.API.Services
             var createdTicket = await _context.Tickets
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .FirstOrDefaultAsync(t => t.Id == ticket.Id);
 
@@ -60,6 +61,7 @@ namespace TechDesk.API.Services
                 Priority = createdTicket.Priority,
                 Status = createdTicket.Status,
                 CreatedBy = createdTicket.CreatedBy.FullName,
+                CreatedByDepartmentName = createdTicket.CreatedBy.Department.DepartmentName,
                 AssignedEngineer = createdTicket.AssignedEngineer?.FullName,
                 CreatedAt = createdTicket.CreatedAt,
                 UpdatedAt = createdTicket.UpdatedAt,
@@ -87,6 +89,7 @@ namespace TechDesk.API.Services
             var tickets = await _context.Tickets
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .ToListAsync();
 
@@ -106,6 +109,7 @@ namespace TechDesk.API.Services
                 Status = ticket.Status,
 
                 CreatedBy = ticket.CreatedBy.FullName,
+                CreatedByDepartmentName = ticket.CreatedBy.Department.DepartmentName,
 
                 AssignedEngineer = ticket.AssignedEngineer?.FullName,
 
@@ -123,6 +127,7 @@ namespace TechDesk.API.Services
             var ticket = await _context.Tickets
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .FirstOrDefaultAsync(t => t.Id == id);
 
@@ -145,6 +150,7 @@ namespace TechDesk.API.Services
                 Status = ticket.Status,
 
                 CreatedBy = ticket.CreatedBy.FullName,
+                CreatedByDepartmentName = ticket.CreatedBy.Department.DepartmentName,
 
                 AssignedEngineer = ticket.AssignedEngineer?.FullName,
 
@@ -244,6 +250,7 @@ namespace TechDesk.API.Services
                 .Where(t => t.CreatedById == userId)
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .ToListAsync();
 
@@ -256,6 +263,7 @@ namespace TechDesk.API.Services
                 Priority = ticket.Priority,
                 Status = ticket.Status,
                 CreatedBy = ticket.CreatedBy.FullName,
+                CreatedByDepartmentName = ticket.CreatedBy.Department.DepartmentName,
                 AssignedEngineer = ticket.AssignedEngineer?.FullName,
                 CreatedAt = ticket.CreatedAt,
                 UpdatedAt = ticket.UpdatedAt,
@@ -271,6 +279,7 @@ namespace TechDesk.API.Services
                 .Where(t => t.AssignedEngineerId == engineerId)
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .ToListAsync();
 
@@ -283,6 +292,7 @@ namespace TechDesk.API.Services
                 Priority = ticket.Priority,
                 Status = ticket.Status,
                 CreatedBy = ticket.CreatedBy.FullName,
+                CreatedByDepartmentName = ticket.CreatedBy.Department.DepartmentName,
                 AssignedEngineer = ticket.AssignedEngineer?.FullName,
                 CreatedAt = ticket.CreatedAt,
                 UpdatedAt = ticket.UpdatedAt,
@@ -297,6 +307,7 @@ namespace TechDesk.API.Services
             var query = _context.Tickets
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
+                    .ThenInclude(u => u.Department)
                 .Include(t => t.AssignedEngineer)
                 .AsQueryable();
 
@@ -326,6 +337,7 @@ namespace TechDesk.API.Services
                 Priority = ticket.Priority,
                 Status = ticket.Status,
                 CreatedBy = ticket.CreatedBy.FullName,
+                CreatedByDepartmentName = ticket.CreatedBy.Department.DepartmentName,
                 AssignedEngineer = ticket.AssignedEngineer?.FullName,
                 CreatedAt = ticket.CreatedAt,
                 UpdatedAt = ticket.UpdatedAt,

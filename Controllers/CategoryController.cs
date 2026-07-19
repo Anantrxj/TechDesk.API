@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TechDesk.API.DTOs.Category;
 using TechDesk.API.Services.Interfaces;
@@ -6,7 +6,7 @@ using TechDesk.API.Services.Interfaces;
 namespace TechDesk.API.Controllers
 {
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
@@ -37,6 +37,7 @@ namespace TechDesk.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CreateCategoryDto dto)
         {
             var category = await _categoryService.CreateAsync(dto);
@@ -48,6 +49,7 @@ namespace TechDesk.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, UpdateCategoryDto dto)
         {
             bool updated = await _categoryService.UpdateAsync(id, dto);
@@ -59,6 +61,7 @@ namespace TechDesk.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             bool deleted = await _categoryService.DeleteAsync(id);

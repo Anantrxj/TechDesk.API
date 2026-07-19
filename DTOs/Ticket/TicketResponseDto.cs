@@ -1,4 +1,4 @@
-﻿using TechDesk.API.Enums;
+using TechDesk.API.Enums;
 
 namespace TechDesk.API.DTOs.Ticket
 {
@@ -11,12 +11,14 @@ namespace TechDesk.API.DTOs.Ticket
         public string Description { get; set; } = string.Empty;
 
         public string CategoryName { get; set; } = string.Empty;
+        public int CategoryId { get; set; }
 
         public Priority Priority { get; set; }
 
         public TicketStatus Status { get; set; }
 
         public string CreatedBy { get; set; } = string.Empty;
+        public string CreatedByDepartmentName { get; set; } = string.Empty;
 
         public string? AssignedEngineer { get; set; }
 

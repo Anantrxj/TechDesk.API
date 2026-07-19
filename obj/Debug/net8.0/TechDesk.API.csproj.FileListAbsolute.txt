@@ -132,7 +132,6 @@ D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\staticwebassets.development.json
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\swae.build.ex.cache
-D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\TechDesk.93940EBE.Up2Date
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\TechDesk.API.dll
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\refint\TechDesk.API.dll
