@@ -139,3 +139,4 @@ D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\TechDesk.API.pdb
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\TechDesk.API.genruntimeconfig.cache
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\ref\TechDesk.API.dll
 D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\TechDesk.API.sourcelink.json
+D:\APIs\TechDesk\TechDesk.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
